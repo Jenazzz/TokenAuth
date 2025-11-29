@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "tokenauth",
+  "version": "${version}",
+  "name": "TokenAuth",
+  "description": "Token Authentication Mod - Ported to 1.21.5",
+  "authors": [
+    "Rect"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.Main.Rect.tokenauth.client.MainDataGenerator"
+    ],
+    "client": [
+      "org.Main.Rect.tokenauth.client.MainClient"
+    ],
+    "main": [
+      "org.Main.Rect.tokenauth.Main"
+    ]
+  },
+  "mixins": [
+    "tokenauth.mixins.json",
+    {
+      "config": "tokenauth.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
